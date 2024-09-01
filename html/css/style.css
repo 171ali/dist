@@ -1449,7 +1449,16 @@ h1 + .line{
 
 
 /* 3.9 Contact */
-
+#contact {
+  background: linear-gradient(to left, rgba(75, 4, 17, 0.8), /* Start color of the gradient (black with 50% opacity) */
+    rgba(5, 58, 108, 0.7)
+    ), /* End color of the gradient (black with 50% opacity) */
+    url('../img/bg/portfolio/cnt.png'); /* Background image */
+  background-size: cover; /* Ensures the image covers the entire section */
+  background-position: center; /* Centers the image */
+  background-repeat: no-repeat; /* Prevents the image from repeating */
+  z-index: 1;
+}
 
 
 .message{

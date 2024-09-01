@@ -139,3 +139,61 @@
 	}
 
 })(jQuery);
+
+// Download CV
+function downloadOrPreview() {
+    const userChoice = confirm("Do you want to download the CV? Click Cancel to view it in a new tab.");
+    
+    if (userChoice) {
+        window.location.href = "../../../documentation/doc/Qasim_Ali_Shah_s_Résumé.pdf";
+    } else {
+        window.open("../../../documentation/doc/Qasim_Ali_Shah_s_Résumé.pdf", '_blank');
+    }
+}
+
+
+// Import the functions you need from the SDKs you need
+import { initializeApp } from "firebase/app";
+import { getAnalytics } from "firebase/analytics";
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
+
+// Your web app's Firebase configuration
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+const firebaseConfig = {
+  apiKey: "AIzaSyBr4fFlropBkMDXuH4AngOx4T_h6KBUOXY",
+  authDomain: "personal-portfolio-1f11c.firebaseapp.com",
+  projectId: "personal-portfolio-1f11c",
+  storageBucket: "personal-portfolio-1f11c.appspot.com",
+  messagingSenderId: "1030027149203",
+  appId: "1:1030027149203:web:c359daba8334c1590d3266",
+  measurementId: "G-0LWE07LSQ2"
+};
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+const analytics = getAnalytics(app);
+
+document.getElementById('contact').addEventListener('submit', submitForm);
+
+function submitForm(e) {
+  e.preventDefault();
+
+  // Get valuesx
+  const name = document.getElementById('name').value;
+  const email = document.getElementById('email').value;
+  const message = document.getElementById('message').value;
+
+  // Save data to Firestore
+  db.collection('contacts').add({
+    name: name,
+    email: email,
+    message: message,
+    timestamp: firebase.firestore.FieldValue.serverTimestamp()
+  }).then(() => {
+    console.log('Message saved');
+    alert('Thank you for contacting us!');
+  }).catch((error) => {
+    console.error('Error saving message: ', error);
+  });
+}
