@@ -4,10 +4,12 @@
 
   	/* Window Load */
 	$(window).on('load',function(){
-		$('.loader').fadeOut(600);
+		$('.loader').fadeOut(300);
         $('.line').addClass('active');
 	});
-
+    setTimeout(function() {
+        $('.loader').fadeOut();  // Ensure spinner is hidden after 5 seconds if something takes too long
+    }, 5000);
 
     /* Navbar scroll*/
     $('.navbar-nav ul li a').on('click', function() {
