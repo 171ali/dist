@@ -147,8 +147,8 @@ function downloadOrPreview() {
     const userChoice = confirm("Do you want to download the CV? Click Cancel to view it in a new tab.");
     
     if (userChoice) {
-        window.location.href = "../../../documentation/doc/Qasim_Ali_Shah_s_Résumé.pdf";
+        window.location.href = "./doc/Qasim Ali Shah's Résumé.pdf";
     } else {
-        window.open("../../../documentation/doc/Qasim_Ali_Shah_s_Résumé.pdf", '_blank');
+        window.open("./doc/Qasim Ali Shah's Résumé.pdf", '_blank');
     }
 }

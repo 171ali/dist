@@ -1223,8 +1223,8 @@ h1 + .line{
 }
 
 .photo-icon-1{
-  top:-50px;
-  left:30%
+  top:-60px;
+  left: -30%;
 }
 
 .photo-icon-2{
@@ -1236,10 +1236,22 @@ h1 + .line{
   right:-50px;
   bottom:50px;
 }
+.photo-icon-4{
+  right:  40%;
+  bottom: -50px;
+}
+.photo-icon-5{
+  right:  80%;
+  bottom: 50px;
+}
+.photo-icon-6{
+  top:-50px;
+  left:80%
+}
 
 .active .photo-icon-1{
   opacity: 1;
-  left:50%
+  left:40%
 }
 
 .active .photo-icon-2{
@@ -1251,6 +1263,21 @@ h1 + .line{
 .active .photo-icon-3{
   opacity: 1;
   bottom:-50px;
+  transition-delay: 1s
+}
+.active .photo-icon-4{
+  opacity: 1;
+  bottom:-70px;
+  transition-delay: 1s
+}
+.active .photo-icon-5{
+  opacity: 1;
+  bottom:-80px;
+  transition-delay: 1s
+}
+.active .photo-icon-6{
+  opacity: 1;
+  top: -50px;
   transition-delay: 1s
 }
 
